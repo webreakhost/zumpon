@@ -1,0 +1,133 @@
+
+.modal {
+  z-index: 1055 !important; /* Ensure modal is above all other elements */
+}
+
+.modal-backdrop {
+  z-index: 1050 !important; /* Ensure the backdrop is properly layered */
+}
+
+
+
+.mobile-menu-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.mobile-menu-wrapper.active {
+  display: block;
+}
+
+.mobile-menu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mobile-menu-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+
+
+/* ✅ Make product action icons always visible on mobile */
+@media (max-width: 768px) {
+  .product-action-vertical {
+    display: flex !important; /* ✅ Ensures icons are visible */
+    justify-content: center;
+    gap: 10px;
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+  
+  .btn-product-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Adds a dark background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-product-icon.w-icon-heart::before {
+    content: "\f004"; /* ✅ FontAwesome Heart icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: white;
+  }
+
+  .btn-product-icon.w-icon-cart::before {
+    content: "\f07a"; 
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: white;
+  }
+}
+
+
+
+/* Responsive image styling */
+
+@media (max-width: 768px) {
+  .product-image {
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    height: 200px !important;
+  }
+}
+/* img2 */
+
+@media (max-width: 480px) {
+  .img2 {
+    height: 400px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .custom-mobile-height {
+    height: 300px !important;
+  }
+}
+
+
+
+@media (max-width: 640px) {
+  .img1{
+    /* margin-left: 45px; */
+    width: 100%;
+
+  }
+  
+}
+@media (max-width: 640px) {
+  .img3{
+    /* margin-left: 45px; */
+    height: 70px !important;
+    width: 70px
+  }
+}
+/* .img3 */
