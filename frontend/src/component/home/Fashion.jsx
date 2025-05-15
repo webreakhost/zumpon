@@ -107,6 +107,8 @@
 
 
 
+
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BACKENDURL } from "../../config/config";
@@ -133,8 +135,8 @@ const Fashion = () => {
   }, []);
 
   return (
-    <div className="col-lg-9 col-sm-8">
-      <div
+    <div className="col-lg-9 col-sm-8 hidden lg:block">
+      {/* <div
         className="swiper-container swiper-theme"
         data-swiper-options={`{
           "spaceBetween": 20,
@@ -144,7 +146,7 @@ const Fashion = () => {
               "1200": { "slidesPerView": 4 }
           }
         }`}
-      >
+      > */}
         <div className="swiper-wrapper row cols-xl-4 cols-lg-3 cols-2">
           {loading ? (
             <p>Loading products...</p>
@@ -153,11 +155,11 @@ const Fashion = () => {
           ) : products.length === 0 ? (
             <p>No products found in this category.</p>
           ) : (
-            products.slice(-6).map((product) => (
+            products.slice(-4).map((product) => (
               <div key={product._id} className="swiper-slide product-col">
                 <div className="product-wrap product text-center">
                   <figure className="product-media">
-                    <a href={`/${product.name}`}>
+                    <a href={`/${product.name.replace(/\s+/g, "-")}`}>
                       <img
                         src={`${BACKENDURL}/uploads/product/${product.images?.[0]?.urls?.[0].split("\\").pop()}`}
                         alt={product.name}
@@ -207,7 +209,7 @@ const Fashion = () => {
         </div>
         <div className="swiper-pagination"></div>
       </div>
-    </div>
+    // </div>
   );
 };
 
